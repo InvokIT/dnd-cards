@@ -4,18 +4,17 @@ import style from './Card.css';
 
 const Card = ({
     name,
-    school,
-    subschool,
-    descriptors = [],
+    schoolsAndDescriptors,
     level,
-    components = [],
-    materials = [],
+    components,
+    materials,
     range,
     duration,
     description,
     bookRef,
     onPropertyChange
 }) => {
+    const school = /^[^\s]*/.exec(schoolsAndDescriptors)[0];
     
     return (
         <article className={classNames(style.card, style[`school-${school}`])}>
@@ -24,7 +23,7 @@ const Card = ({
                     <input type="text" value={name} onChange={onPropertyChange.bind("name")} />
                 </header>
                 <section className={style.school}>
-                    <input type="text" value={school} onChange={onPropertyChange.bind("school")} />
+                    <input type="text" value={schoolsAndDescriptors} onChange={onPropertyChange.bind("schoolsAndDescriptors")} />
                 </section>
                 <section className={style.range}>
                     <input type="text" value={range} onChange={onPropertyChange.bind("range")} />
@@ -34,6 +33,15 @@ const Card = ({
                 </section>
                 <section className={style.description}>
                     <textarea onChange={onPropertyChange.bind("description")}>{description}</textarea>
+                </section>
+                <section className={style.level}>
+                    <input type="text" value={level} onChange={onPropertyChange.bind("level")} />
+                </section>
+                <section className={style.components}>
+                    <textarea onChange={onPropertyChange.bind("components")}>{components}</textarea>
+                </section>
+                <section className={style.materials}>
+                    <textarea onChange={onPropertyChange.bind("materials")}>{materials}</textarea>
                 </section>
                 <section className={style.bookRef}>
                     <div className={style.bookRefName}>{bookRef.name}</div>

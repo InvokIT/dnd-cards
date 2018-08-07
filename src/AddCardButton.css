@@ -1,0 +1,11 @@
+.card {
+  display: flex;
+  width: 55mm;
+  height: 80mm;
+  border: 1mm black dashed;
+  border-radius: 5mm;
+}
+
+.card button {
+  
+}
