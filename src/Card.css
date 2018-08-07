@@ -1,0 +1,44 @@
+.card {
+    display: flex;
+    width: 55mm;
+    height:80mm;
+    font-size: 20pt;
+    font-family: serif;
+}
+
+.content {
+    background-color: white;
+}
+
+.name {
+    width: 100%;
+    font-family: fantasy;
+}
+
+.description {
+    
+}
+
+.card.school-abjuration {
+
+}
+
+.card.school-conjuration {
+
+}
+
+.card.school-divination {
+
+}
+
+.card.school-evocation {
+
+}
+
+.card.school-necromancy {
+
+}
+
+.card.school-transmutation {
+
+}
