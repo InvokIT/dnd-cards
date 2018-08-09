@@ -1,5 +1,5 @@
 import React from 'react';
-import style from "./AddCardButton.css";
+import style from "./NewSpellCard.css";
 
 const NewSpellCard = ({onClick}) => (
   <article className={style.card}>

@@ -12,8 +12,8 @@ const CardList = ({spellIds, onCreateSpellClicked}) => {
         <NewSpellCard onClick={onCreateSpellClicked} />
       </li>
       {spellIds.map(spellId => 
-        <li className={style.listItem}>
-          <CardContainer key={spellId} spellId={spellId} />
+        <li className={style.listItem} key={spellId}>
+          <CardContainer spellId={spellId} />
         </li>
       )}
     </ul>

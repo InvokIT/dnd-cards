@@ -6,55 +6,56 @@ import style from './Card.css';
 const preventDefault = (e) => e.preventDefault();
 
 const Card = ({
-    name,
-    school,
-    subschool,
-    descriptors,
-    level,
-    components,
-    materials,
-    range,
-    duration,
-    description,
-    bookRef,
+    name = "",
+    school = "",
+    subschool = "",
+    descriptors = "",
+    level = "",
+    components = "",
+    materials = "",
+    range = "",
+    duration = "",
+    description = "",
+    sourceName = "",
+    sourcePage = "",
     onAttributeChanged
 }) => {
     return (
         <form className={classNames(style.card, style[`school-${school}`])} onSubmit={preventDefault}>
             <div className={style.content}>
                 <header className={style.name}>
-                    <input type="text" name="name" value={name} onChange={onAttributeChanged} />
+                    <input placeholder="Name" type="text" name="name" value={name} onChange={onAttributeChanged} />
                 </header>
                 <section className={style.school}>
-                    <input type="text" name="school" value={school} onChange={onAttributeChanged} />
+                    <input placeholder="School" type="text" name="school" value={school} onChange={onAttributeChanged} />
                 </section>
                 <section className={style.subschool}>
-                    <input type="text" name="subschool" value={subschool} onChange={onAttributeChanged} />
+                    <input placeholder="Subschool" type="text" name="subschool" value={subschool} onChange={onAttributeChanged} />
                 </section>
                 <section className={style.descriptors}>
-                    <input type="text" name="descriptors" value={descriptors} onChange={onAttributeChanged} />
+                    <input placeholder="Descriptors" type="text" name="descriptors" value={descriptors} onChange={onAttributeChanged} />
                 </section>
                 <section className={style.range}>
-                    <input type="text" name="range" value={range} onChange={onAttributeChanged} />
+                    <input placeholder="Range" type="text" name="range" value={range} onChange={onAttributeChanged} />
                 </section>
                 <section className={style.duration}>
-                    <input type="text" name="duration" value={duration} onChange={onAttributeChanged} />
+                    <input placeholder="Duration" type="text" name="duration" value={duration} onChange={onAttributeChanged} />
                 </section>
                 <section className={style.description}>
-                    <textarea name="description" onChange={onAttributeChanged}>{description}</textarea>
+                    <textarea placeholder="Description" name="description" value={description} onChange={onAttributeChanged} />
                 </section>
                 <section className={style.level}>
-                    <input type="text" name="level" value={level} onChange={onAttributeChanged} />
+                    <input placeholder="Level" type="text" name="level" value={level} onChange={onAttributeChanged} />
                 </section>
                 <section className={style.components}>
-                    <textarea name="components" onChange={onAttributeChanged}>{components}</textarea>
+                    <textarea placeholder="Components" name="components" value={components} onChange={onAttributeChanged} />
                 </section>
                 <section className={style.materials}>
-                    <textarea name="materials" onChange={onAttributeChanged}>{materials}</textarea>
+                    <textarea placeholder="Materials" name="materials" value={materials} onChange={onAttributeChanged} />
                 </section>
-                <section className={style.bookRef}>
-                    <div className={style.bookRefName}>{bookRef.name}</div>
-                    <div className={style.bookRefPage}>{bookRef.page}</div>
+                <section className={style.source}>
+                    <input placeholder="Source name" type="text" name="sourceName" className={style.sourceName} value={sourceName}/>
+                    <input placeholder="Source page" type="text" name="sourcePage" className={style.sourcePage} value={sourcePage}/>
                 </section>
             </div>
         </form>
@@ -72,11 +73,9 @@ Card.propTypes = {
     range: PropTypes.string,
     duration: PropTypes.string,
     description: PropTypes.string,
-    bookRef: PropTypes.shape({
-        name: PropTypes.string,
-        page: PropTypes.string
-    }),
-    onPropertyChange: PropTypes.func.isRequired
+    sourceName: PropTypes.string,
+    sourcePage: PropTypes.string,
+    onAttributeChanged: PropTypes.func.isRequired
 };
 
 export default Card;

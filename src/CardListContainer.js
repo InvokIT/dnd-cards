@@ -5,9 +5,10 @@ import { createSpell } from "./actions/spells";
 
 const mapStateToProps = (state, ownProps) => {
   const sorting = state.sorting;
-  const spells = state.spells;
 
-  return sorting.map(spellId => spells[spellId]);
+  return {
+    spellIds: sorting
+  };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

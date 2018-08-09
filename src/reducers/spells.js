@@ -1,4 +1,5 @@
 import { omit } from "lodash-es";
+
 const initialState = {};
 
 export default (state = initialState, action) => {
