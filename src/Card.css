@@ -4,6 +4,7 @@
     height:80mm;
     font-size: 20pt;
     font-family: serif;
+    position:relative;
 }
 
 .content {

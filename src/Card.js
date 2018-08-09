@@ -8,7 +8,8 @@ const preventDefault = (e) => e.preventDefault();
 const Card = ({
     name,
     school,
-    schoolsAndDescriptors,
+    subschool,
+    descriptors,
     level,
     components,
     materials,
@@ -25,7 +26,13 @@ const Card = ({
                     <input type="text" name="name" value={name} onChange={onAttributeChanged} />
                 </header>
                 <section className={style.school}>
-                    <input type="text" name="schoolsAndDescriptors" value={schoolsAndDescriptors} onChange={onAttributeChanged} />
+                    <input type="text" name="school" value={school} onChange={onAttributeChanged} />
+                </section>
+                <section className={style.subschool}>
+                    <input type="text" name="subschool" value={subschool} onChange={onAttributeChanged} />
+                </section>
+                <section className={style.descriptors}>
+                    <input type="text" name="descriptors" value={descriptors} onChange={onAttributeChanged} />
                 </section>
                 <section className={style.range}>
                     <input type="text" name="range" value={range} onChange={onAttributeChanged} />
@@ -57,7 +64,8 @@ const Card = ({
 Card.propTypes = {
     name: PropTypes.string,
     school: PropTypes.string,
-    schoolsAndDescriptors: PropTypes.string,
+    subschool: PropTypes.string,
+    descriptors: PropTypes.string,
     level: PropTypes.string,
     components: PropTypes.string,
     materials: PropTypes.string,
