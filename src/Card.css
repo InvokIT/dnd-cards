@@ -2,44 +2,56 @@
     display: flex;
     width: 55mm;
     height:80mm;
-    font-size: 20pt;
-    font-family: serif;
     position:relative;
-}
-
-.content {
+    border: 1mm solid black;
+    border-radius: 5mm;
+    overflow: hidden;
+    padding: 5mm;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 10mm 1mm green;
     background-color: white;
 }
 
-.name {
+.card input, .card textarea {
+    font-size: 10pt;
+    font-family: fantasy;
+    border: none;
+    background: transparent;
+}
+
+.card section {
+    
+}
+
+.card--name {
     width: 100%;
     font-family: fantasy;
 }
 
-.description {
+.card--description {
     
 }
 
-.card.school-abjuration {
+.card-school-abjuration {
 
 }
 
-.card.school-conjuration {
+.card-school-conjuration {
 
 }
 
-.card.school-divination {
+.card-school-divination {
 
 }
 
-.card.school-evocation {
+.card-school-evocation {
 
 }
 
-.card.school-necromancy {
+.card-school-necromancy {
 
 }
 
-.card.school-transmutation {
+.card-school-transmutation {
 
 }

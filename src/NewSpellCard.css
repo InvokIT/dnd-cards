@@ -1,4 +1,4 @@
-.card {
+.new-spell-card {
   display: flex;
   width: 55mm;
   height: 80mm;
@@ -6,6 +6,6 @@
   border-radius: 5mm;
 }
 
-.card button {
+.new-spell-card button {
   
 }
