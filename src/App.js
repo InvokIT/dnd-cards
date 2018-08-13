@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import style from './App.css';
+import './App.css';
+import SpellsDataLists from "./SpellsDataLists";
 import CardListContainer from "./CardListContainer";
 
 class App extends Component {
@@ -12,7 +13,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className={style.App}>
+      <div className="app">
+        <SpellsDataLists />
         <CardListContainer />
       </div>
     );

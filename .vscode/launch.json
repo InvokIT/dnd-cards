@@ -12,7 +12,14 @@
         "--remote-debugging-port=9222"
       ],
       "userDataDir": true,
-      "name": "Launch Chrome against localhost",
+      "name": "Chromium",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Chrome",
       "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}"
     }
