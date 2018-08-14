@@ -20,8 +20,6 @@ body {
   src: local('Lycanthrope'), url(./resources/Lycanthrope.ttf) format('truetype');
 }
 
-@import url('https://fonts.googleapis.com/css?family=Alegreya:400,400i,700');
-
 @media print {
   body {
     background-image: none;

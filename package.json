@@ -12,6 +12,7 @@
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
     "string-hash": "^1.1.3",
+    "typeface-alegreya": "0.0.54",
     "uuid": "^3.3.2"
   },
   "scripts": {
