@@ -32,41 +32,41 @@ const Card = ({
     return (
         <form style={cardStyle} className={classNames("card", `card-school-${school.toLowerCase()}`)} onSubmit={preventDefault}>
             <section className={"card--name"}>
-                <input required placeholder="Name" type="text" name="name" value={name} onChange={onAttributeChanged} />
+                <input title="Name" required placeholder="Name" type="text" name="name" value={name} onChange={onAttributeChanged} />
             </section>
             <section className={"card--school"}>
-                <input required placeholder="School" type="text" name="school" list="spell-schools" value={school} onChange={onAttributeChanged} />
+                <input title="School" required placeholder="School" type="text" name="school" list="spell-schools" value={school} onChange={onAttributeChanged} />
             </section>
             <section className={"card--save"}>
-                <input required placeholder="Save" type="text" name="save" list="spell-saves" value={save} onChange={onAttributeChanged} />
+                <input title="Saves" required placeholder="Save" type="text" name="save" list="spell-saves" value={save} onChange={onAttributeChanged} />
             </section>
             <section className={"card--subschool"}>
-                <input required placeholder="Subschool" type="text" name="subschool" list={`spell-subschools-${school.toLowerCase()}`} value={subschool} onChange={onAttributeChanged} />
+                <input title="Subschool" required placeholder="Subschool" type="text" name="subschool" list={`spell-subschools-${school.toLowerCase()}`} value={subschool} onChange={onAttributeChanged} />
             </section>
             <section className={"card--descriptors"}>
-                <input required placeholder="Descriptors" type="text" name="descriptors" value={descriptors} onChange={onAttributeChanged} />
+                <input title="Descriptors" required placeholder="Descriptors" type="text" name="descriptors" value={descriptors} onChange={onAttributeChanged} />
             </section>
             <section className={"card--range"}>
-                <input required placeholder="Range" type="text" name="range" value={range} onChange={onAttributeChanged} />
+                <input title="Range" required placeholder="Range" type="text" name="range" value={range} onChange={onAttributeChanged} />
             </section>
             <section className={"card--duration"}>
-                <input required placeholder="Duration" type="text" name="duration" value={duration} onChange={onAttributeChanged} />
+                <input title="Duration" required placeholder="Duration" type="text" name="duration" value={duration} onChange={onAttributeChanged} />
             </section>
             <section className={"card--description"}>
-                <textarea required placeholder="Description" name="description" value={description} onChange={onAttributeChanged} />
+                <textarea title="Description" required placeholder="Description" name="description" value={description} onChange={onAttributeChanged} />
             </section>
             <section className={"card--level"}>
-                <input required placeholder="Level" type="text" name="level" value={level} onChange={onAttributeChanged} />
+                <input title="Level" required placeholder="Level" type="text" name="level" value={level} onChange={onAttributeChanged} />
             </section>
             <section className={"card--components"}>
-                <textarea required placeholder="Components" name="components" value={components} onChange={onAttributeChanged} />
+                <textarea title="Components" required placeholder="Components" name="components" value={components} onChange={onAttributeChanged} />
             </section>
             <section className={"card--materials"}>
-                <textarea required placeholder="Materials" name="materials" value={materials} onChange={onAttributeChanged} />
+                <textarea title="Materials" required placeholder="Materials" name="materials" value={materials} onChange={onAttributeChanged} />
             </section>
             <section className={"card--source"}>
-                <input required placeholder="Source name" type="text" name="sourceName" className={"card--source-name"} value={sourceName} />
-                <input required placeholder="Source page" type="text" name="sourcePage" className={"card--source-page"} value={sourcePage} />
+                <input title="Source name" required placeholder="Source name" type="text" name="sourceName" className={"card--source-name"} value={sourceName} onChange={onAttributeChanged} />
+                <input title="Source page" required placeholder="Source page" type="text" name="sourcePage" className={"card--source-page"} value={sourcePage} onChange={onAttributeChanged} />
             </section>
         </form>
     );

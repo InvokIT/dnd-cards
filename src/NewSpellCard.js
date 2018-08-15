@@ -1,10 +1,11 @@
 import React from 'react';
-import style from "./NewSpellCard.css";
+import "./NewSpellCard.css";
+import { cardBackgroundImages } from "./resources";
 
 const NewSpellCard = ({onClick}) => (
-  <article className={style.card}>
-    <button onClick={onClick} title="Add new spell">+</button>
-  </article>
+  <button onClick={onClick} title="CLick to add a spell card" className="new-spell-card" style={{backgroundImage:`url(${cardBackgroundImages[0]})`}}>
+    <span>Create Spell</span>
+  </button>
 );
 
 export default NewSpellCard;
