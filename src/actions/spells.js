@@ -11,3 +11,13 @@ export const modifySpell = (spellId, attributeName, attributeValue) => ({
     attributeName,
     attributeValue
 });
+
+export const deleteSpell = (spellId) => ({
+    type: "SPELL_DELETE",
+    spellId
+});
+
+export const loadSpells = (spellArray) => ({
+    type: "SPELL_LOAD",
+    spells: spellArray
+});

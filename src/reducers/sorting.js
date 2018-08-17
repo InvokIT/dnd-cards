@@ -10,6 +10,8 @@ export default (state = initialState, action) => {
             return [spellId, ...state];
         case "SPELL_DELETE":
             return without(state, spellId);
+        case "SPELL_LOAD":
+            return action.spells.map(spell => spell.id);
         default:
             return state;
     }

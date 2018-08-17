@@ -1,16 +1,22 @@
-import { omit } from "lodash-es";
+import { omit, keyBy } from "lodash-es";
 
 const initialState = {};
+
+const newSpell = (id) => ({id});
 
 export default (state = initialState, action) => {
     const spellId = action.spellId;
 
     switch (action.type) {
         case "SPELL_CREATE":
-            return { [spellId]:{ id:spellId }, ...state };
+            return {
+                [spellId]: newSpell(spellId),
+                ...state
+            };
         case "SPELL_MODIFY":
             const spellAttrName = action.attributeName;
             const spellAttrValue = action.attributeValue;
+            
             return {
                 ...state,
                 [spellId]: {
@@ -20,6 +26,8 @@ export default (state = initialState, action) => {
             };
         case "SPELL_DELETE":
             return omit(state, spellId);
+        case "SPELL_LOAD":
+            return keyBy(action.spells, spell => spell.id);
         default:
             return state;
     }
