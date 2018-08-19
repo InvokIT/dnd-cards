@@ -26,7 +26,7 @@ export default (state = initialState, action) => {
             };
         case "SPELL_DELETE":
             return omit(state, spellId);
-        case "SPELL_LOAD":
+        case "SPELLS_SET":
             return keyBy(action.spells, spell => spell.id);
         default:
             return state;

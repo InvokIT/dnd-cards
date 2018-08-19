@@ -4,6 +4,9 @@ import classNames from "classnames";
 import stringHash from "string-hash";
 import './Card.css';
 import { cardBackgroundImages } from "./resources";
+import castTimeIcon from "./resources/gear.svg";
+import durationIcon from "./resources/hourglass.svg";
+import rangeIcon from "./resources/reticle.svg";
 // import AutoScalingInput from "./AutoScalingInput";
 
 const preventDefault = (e) => e.preventDefault();
@@ -14,6 +17,7 @@ const Card = ({
     school = "",
     subschool = "",
     descriptors = "",
+    castTime = "",
     level = "",
     components = "",
     materials = "",
@@ -42,15 +46,24 @@ const Card = ({
                     <input title="Saves" required placeholder="Save" type="text" name="save" list="spell-saves" value={save} onChange={onAttributeChanged} />
                 </section>
                 <section className={"card--subschool"}>
-                    <input title="Subschool" required placeholder="Subschool" type="text" name="subschool" list={`spell-subschools-${school.toLowerCase()}`} value={subschool} onChange={onAttributeChanged} />
+                    <input className="screen-only" title="Subschool" required placeholder="Subschool" type="text" name="subschool" list={`spell-subschools-${school.toLowerCase()}`} value={subschool} onChange={onAttributeChanged} />
+                    <input className="screen-only" title="Descriptors" required placeholder="Descriptors" type="text" name="descriptors" value={descriptors} onChange={onAttributeChanged} />
+                    <span className="print-only">
+                        {subschool ? `(${subschool})` : null}
+                        {descriptors ? ` [${descriptors}]` : null}
+                    </span>
                 </section>
-                <section className={"card--descriptors"}>
-                    <input title="Descriptors" required placeholder="Descriptors" type="text" name="descriptors" value={descriptors} onChange={onAttributeChanged} />
+                <hr />
+                <section className={"card--casttime"}>
+                    <div className="card--icon"><img src={castTimeIcon} alt="Casting time" /></div>
+                    <input title="Casting time" required placeholder="Casting time" type="text" name="castTime" value={castTime} onChange={onAttributeChanged} />
                 </section>
                 <section className={"card--range"}>
+                    <div className="card--icon"><img src={rangeIcon} alt="Range" /></div>
                     <input title="Range" required placeholder="Range" type="text" name="range" value={range} onChange={onAttributeChanged} />
                 </section>
                 <section className={"card--duration"}>
+                    <div className="card--icon"><img src={durationIcon} alt="Duration" /></div>
                     <input title="Duration" required placeholder="Duration" type="text" name="duration" value={duration} onChange={onAttributeChanged} />
                 </section>
                 <section className={"card--description"}>

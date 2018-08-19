@@ -1,23 +1,40 @@
 import { v4 as uuid } from "uuid";
+import { sync as syncStorage } from "./storage";
 
-export const createSpell = () => ({
-    type: "SPELL_CREATE",
-    spellId: uuid()
-});
+export const createSpell = () => async (dispatch, getState) => {
+    await dispatch({
+        type: "SPELL_CREATE",
+        spellId: uuid()
+    });
 
-export const modifySpell = (spellId, attributeName, attributeValue) => ({
-    type: "SPELL_MODIFY",
-    spellId,
-    attributeName,
-    attributeValue
-});
+    dispatch(syncStorage());
+};
 
-export const deleteSpell = (spellId) => ({
-    type: "SPELL_DELETE",
-    spellId
-});
+export const modifySpell = (spellId, attributeName, attributeValue) => async (dispatch, getState) => {
+    await dispatch({
+        type: "SPELL_MODIFY",
+        spellId,
+        attributeName,
+        attributeValue
+    });
 
-export const loadSpells = (spellArray) => ({
-    type: "SPELL_LOAD",
-    spells: spellArray
-});
+    dispatch(syncStorage());
+};
+
+export const deleteSpell = (spellId) => async (dispatch, getState) => {
+    await dispatch({
+        type: "SPELL_DELETE",
+        spellId
+    });
+
+    dispatch(syncStorage());
+};
+
+export const setSpells = (spellArray) => async (dispatch, getState) => {
+    await dispatch({
+        type: "SPELLS_SET",
+        spells: spellArray
+    });
+
+    dispatch(syncStorage());
+};
