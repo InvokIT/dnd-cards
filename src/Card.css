@@ -1,12 +1,12 @@
 .card {
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 55mm;
     height:80mm;
     position:relative;
-    overflow: hidden;
+    padding: 2mm;
     box-sizing: border-box;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     font-family: "Alegreya", serif;
 }
 
@@ -14,24 +14,80 @@
     position:absolute;
     top:0;
     left:0;
-    width: 55mm;
-    height: 80mm;
-}
-
-.card--school-color {
-    content: " ";
-    position: absolute;
     width: 100%;
     height: 100%;
 }
 
+.card--school-color {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+
+.card > header {
+    position: relative;
+    flex-grow:0;
+    display: flex;
+    align-items: stretch;
+    height: 8mm;
+    margin-bottom: 1mm;
+}
+
+.card .card--name {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.card .card--name input {
+    color: white;
+    text-shadow:
+        -0.3mm -0.3mm 0 black,
+        0.3mm -0.3mm 0 black,
+        -0.3mm 0.3mm 0 black,
+        0.3mm 0.3mm 0 black;
+    width: 100%;
+}
+
+.card > header, .card .card--name input {
+    font-family: "Lycanthrope", fantasy;
+    font-size:8mm;
+}
+
+.card .card--save-icon {
+    flex-grow: 0;
+    display: flex;
+    align-items: center;
+}
+
+.card[save] .card--save-icon::before {
+    display: block;
+    content: "";
+    width: 3mm;
+    height: 3mm;
+    border-radius: 50%;
+    border: solid #444 0.4mm;
+    margin-left: 1mm;
+}
+
+.card[save~="fortitude" i] .card--save-icon::before {
+    background-color: red;
+}
+
+.card[save~="reflex" i] .card--save-icon::before {
+    background-color: rgb(44, 192, 44);
+}
+
+.card[save~="will" i] .card--save-icon::before {
+    background-color: goldenrod;
+}
+
 .card--content {
-    position:absolute;
-    top:10mm;
-    left:2mm;
-    width: 51mm;
-    height: 68mm;
+    position: relative;;
     padding: 1mm;
+    flex-grow:1;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -54,24 +110,24 @@
     flex-shrink: 0;
     flex-basis: 100%;
     max-width: 100%;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 .card--content > hr {
     flex-grow: 1;
-    border-style: solid;
-    border-width: 0.1mm;
-    height: 0;
-    background-color: black;
+    border: none;
+    height: 0.3mm;
+    width: 100%;
+    background-color: #666;
+    margin: 0.2em 0;
 }
 
 .card--content .card--icon {
     flex-grow: 0;
     width: 1em;
-    height: 1em;
     display: flex;
     align-items: center;
-    margin-right: 0.5em;
+    margin-right: 0.25em;
 }
 
 .card--content .card--icon img {
@@ -81,7 +137,6 @@
 .card input, .card textarea {
     flex-grow: 1;
     resize: none;
-    overflow: hidden;
     border: none;
     background: transparent;
     margin: 0;
@@ -106,70 +161,40 @@
     }
 }
 
-.card .card--name {
-    position:absolute;
-    top:-9mm;
-}
-
-.card .card--name input {
-    font-family: "Lycanthrope", fantasy;
-    font-size:20pt;
-    color: white;
-    text-shadow: 0 0 0.5mm black;
-}
-
-.card .card--school {
-    flex-basis: 50%;
-    max-width: 50%;
-}
-
 .card .card--school input {
-    font-weight: bold;
+    /* font-weight: bold; */
+    font-style: italic;
+    padding-left: 0em;
 }
 
-.card .card--save {
-    flex-basis: 50%;
-    max-width: 50%;
-}
-
-.card .card--save input {
-    text-align: right;
-    font-weight: bold;
-}
-
-.card .card--subschool input {
-    flex-basis: 50%;
-    max-width: 50%;
-}
-
-.card.card-school-abjuration .card--school-color {
+.card[school~="abjuration" i] .card--school-color {
     background-color: rgba(0, 128, 192, 0.5);
 }
 
-.card.card-school-conjuration .card--school-color {
+.card[school~="conjuration" i] .card--school-color {
     background-color: rgba(0, 128, 0, 0.5);
 }
 
-.card.card-school-divination .card--school-color {
+.card[school~="divination" i] .card--school-color {
     background-color: rgba(128, 128, 160, 0.5);
 }
 
-.card.card-school-enchantment .card--school-color {
+.card[school~="enchantment" i] .card--school-color {
     background-color: rgba(202, 47, 169, 0.5);
 }
 
-.card.card-school-evocation .card--school-color {
+.card[school~="evocation" i] .card--school-color {
     background-color: rgba(192, 13, 13, 0.5);
 }
 
-.card.card-school-illusion .card--school-color {
+.card[school~="illusion" i] .card--school-color {
     background-color: rgba(233, 147, 18, 0.5);
 }
 
-.card.card-school-necromancy .card--school-color {
+.card[school~="necromancy" i] .card--school-color {
     background-color: rgba(0, 58, 3, 0.5);
 }
 
-.card.card-school-transmutation .card--school-color {
+.card[school~="transmutation" i] .card--school-color {
     background-color: rgba(142, 21, 158, 0.5);
 }

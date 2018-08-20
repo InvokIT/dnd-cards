@@ -7,16 +7,27 @@ import { cardBackgroundImages } from "./resources";
 import castTimeIcon from "./resources/gear.svg";
 import durationIcon from "./resources/hourglass.svg";
 import rangeIcon from "./resources/reticle.svg";
+import saveIcon from "./resources/shield.svg";
 // import AutoScalingInput from "./AutoScalingInput";
 
 const preventDefault = (e) => e.preventDefault();
+
+const fitElement = (e) => {
+    const el = e.target;
+    const parent = el.parentElement;
+
+    if (parent) {
+        const pWidth = parent.offsetWidth;
+        const eWidth = el.offsetWidth;
+        const scale = Math.min(1, pWidth / eWidth);
+        el.style.transform = `scale(${scale})`;
+    }
+};
 
 const Card = ({
     id,
     name = "",
     school = "",
-    subschool = "",
-    descriptors = "",
     castTime = "",
     level = "",
     components = "",
@@ -32,55 +43,53 @@ const Card = ({
     const backgroundImage = cardBackgroundImages[stringHash(id) % cardBackgroundImages.length];
 
     return (
-        <form className={classNames("card", `card-school-${school.toLowerCase()}`)} onSubmit={preventDefault}>
+        <form school={school || null} save={save || null} className="card" onSubmit={preventDefault}>
             <img className="card--background" src={backgroundImage} alt="" />
             <div className="card--school-color" />
-            <div className="card--content">
-                <section className={"card--name"}>
-                    <input title="Name" required placeholder="Name" type="text" name="name" value={name} onChange={onAttributeChanged} />
+            <header>
+                <section className="card--name">
+                    <input title="Name" required placeholder="Name" type="text" name="name" value={name} onChange={onAttributeChanged} onBlur={fitElement} />
                 </section>
-                <section className={"card--school"}>
+                <section className="card--save-icon">
+                </section>
+            </header>
+            <div className="card--content">
+                <section className="card--school">
                     <input title="School" required placeholder="School" type="text" name="school" list="spell-schools" value={school} onChange={onAttributeChanged} />
                 </section>
-                <section className={"card--save"}>
-                    <input title="Saves" required placeholder="Save" type="text" name="save" list="spell-saves" value={save} onChange={onAttributeChanged} />
-                </section>
-                <section className={"card--subschool"}>
-                    <input className="screen-only" title="Subschool" required placeholder="Subschool" type="text" name="subschool" list={`spell-subschools-${school.toLowerCase()}`} value={subschool} onChange={onAttributeChanged} />
-                    <input className="screen-only" title="Descriptors" required placeholder="Descriptors" type="text" name="descriptors" value={descriptors} onChange={onAttributeChanged} />
-                    <span className="print-only">
-                        {subschool ? `(${subschool})` : null}
-                        {descriptors ? ` [${descriptors}]` : null}
-                    </span>
-                </section>
                 <hr />
-                <section className={"card--casttime"}>
+                <section className="card--casttime">
                     <div className="card--icon"><img src={castTimeIcon} alt="Casting time" /></div>
-                    <input title="Casting time" required placeholder="Casting time" type="text" name="castTime" value={castTime} onChange={onAttributeChanged} />
+                    <input title="Casting time" required placeholder="Casting time" type="text" list="spell-casttimes" name="castTime" value={castTime} onChange={onAttributeChanged} />
                 </section>
-                <section className={"card--range"}>
+                <section className="card--range">
                     <div className="card--icon"><img src={rangeIcon} alt="Range" /></div>
                     <input title="Range" required placeholder="Range" type="text" name="range" value={range} onChange={onAttributeChanged} />
                 </section>
-                <section className={"card--duration"}>
+                <section className="card--duration">
                     <div className="card--icon"><img src={durationIcon} alt="Duration" /></div>
                     <input title="Duration" required placeholder="Duration" type="text" name="duration" value={duration} onChange={onAttributeChanged} />
                 </section>
-                <section className={"card--description"}>
+                <section className="card--save">
+                    <div className="card--icon"><img src={saveIcon} alt="Save" /></div>
+                    <input title="Saves" required placeholder="Save" type="text" name="save" list="spell-saves" value={save} onChange={onAttributeChanged} />
+                </section>
+                <hr />
+                <section className="card--description">
                     <textarea title="Description" required placeholder="Description" name="description" value={description} onChange={onAttributeChanged} />
                 </section>
-                <section className={"card--level"}>
+                <section className="card--level">
                     <input title="Level" required placeholder="Level" type="text" name="level" value={level} onChange={onAttributeChanged} />
                 </section>
-                <section className={"card--components"}>
+                <section className="card--components">
                     <textarea title="Components" required placeholder="Components" name="components" value={components} onChange={onAttributeChanged} />
                 </section>
-                <section className={"card--materials"}>
+                <section className="card--materials">
                     <textarea title="Materials" required placeholder="Materials" name="materials" value={materials} onChange={onAttributeChanged} />
                 </section>
-                <section className={"card--source"}>
-                    <input title="Source name" required placeholder="Source name" type="text" name="sourceName" className={"card--source-name"} value={sourceName} onChange={onAttributeChanged} />
-                    <input title="Source page" required placeholder="Source page" type="text" name="sourcePage" className={"card--source-page"} value={sourcePage} onChange={onAttributeChanged} />
+                <section className="card--source">
+                    <input title="Source name" required placeholder="Source name" type="text" name="sourceName" className="card--source-name" value={sourceName} onChange={onAttributeChanged} />
+                    <input title="Source page" required placeholder="Source page" type="text" name="sourcePage" className="card--source-page" value={sourcePage} onChange={onAttributeChanged} />
                 </section>
             </div>
         </form>

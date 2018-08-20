@@ -40,5 +40,11 @@ export default () => (
       <option value="Reflex halves" />
       <option value="Will negates" />
     </datalist>
+    <datalist id="spell-casttimes">
+      <option value="1 standard action" />
+      <option value="1 full round" />
+      <option value="1 minute" />
+      <option value="10 minutes" />
+    </datalist>
   </div>
 );
