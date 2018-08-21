@@ -6,7 +6,6 @@
     position:relative;
     padding: 2mm;
     box-sizing: border-box;
-    flex-direction: column;
     font-family: "Alegreya", serif;
 }
 
@@ -31,7 +30,7 @@
     flex-grow:0;
     display: flex;
     align-items: stretch;
-    height: 8mm;
+    height: 6mm;
     margin-bottom: 1mm;
 }
 
@@ -53,7 +52,7 @@
 
 .card > header, .card .card--name input {
     font-family: "Lycanthrope", fantasy;
-    font-size:8mm;
+    font-size:6mm;
 }
 
 .card .card--save-icon {
@@ -89,9 +88,9 @@
     padding: 1mm;
     flex-grow:1;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: stretch;
     align-content: flex-start;
     background-color: white;
     border-radius:2mm;
@@ -114,12 +113,11 @@
 }
 
 .card--content > hr {
-    flex-grow: 1;
     border: none;
     height: 0.3mm;
     width: 100%;
     background-color: #666;
-    margin: 0.2em 0;
+    margin: 0.5em 0;
 }
 
 .card--content .card--icon {
@@ -197,4 +195,31 @@
 
 .card[school~="transmutation" i] .card--school-color {
     background-color: rgba(142, 21, 158, 0.5);
+}
+
+.card .card--description {
+    flex-grow: 1;
+    align-items: stretch;
+}
+
+.card footer {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+}
+
+.card footer section {
+    flex-basis: auto;
+}
+
+.card footer .card--source {
+    flex-grow: 1;
+}
+
+.card .card--level {
+    font-style: italic;
+}
+
+.card .card--level input {
+    width: 1ch;
 }

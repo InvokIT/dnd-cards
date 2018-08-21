@@ -16,6 +16,12 @@
   color: rgba(0,0,0,0.1);
 }
 
+@media print {
+  .new-spell-card {
+    display: none;
+  }
+}
+
 .new-spell-card > span {
   position:relative;
 }

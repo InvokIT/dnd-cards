@@ -46,5 +46,8 @@ export default () => (
       <option value="1 minute" />
       <option value="10 minutes" />
     </datalist>
+    <datalist id="spell-ranges">
+      <option value="Touch" />
+    </datalist>
   </div>
 );

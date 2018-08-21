@@ -31,13 +31,11 @@ const Card = ({
     castTime = "",
     level = "",
     components = "",
-    materials = "",
     range = "",
     duration = "",
     save = "",
     description = "",
-    sourceName = "",
-    sourcePage = "",
+    source = "",
     onAttributeChanged
 }) => {
     const backgroundImage = cardBackgroundImages[stringHash(id) % cardBackgroundImages.length];
@@ -64,7 +62,7 @@ const Card = ({
                 </section>
                 <section className="card--range">
                     <div className="card--icon"><img src={rangeIcon} alt="Range" /></div>
-                    <input title="Range" required placeholder="Range" type="text" name="range" value={range} onChange={onAttributeChanged} />
+                    <input title="Range" required placeholder="Range" type="text" name="range" list="spell-ranges" value={range} onChange={onAttributeChanged} />
                 </section>
                 <section className="card--duration">
                     <div className="card--icon"><img src={durationIcon} alt="Duration" /></div>
@@ -78,19 +76,21 @@ const Card = ({
                 <section className="card--description">
                     <textarea title="Description" required placeholder="Description" name="description" value={description} onChange={onAttributeChanged} />
                 </section>
-                <section className="card--level">
-                    <input title="Level" required placeholder="Level" type="text" name="level" value={level} onChange={onAttributeChanged} />
-                </section>
                 <section className="card--components">
-                    <textarea title="Components" required placeholder="Components" name="components" value={components} onChange={onAttributeChanged} />
+                    <input type="text" title="Components" required placeholder="Components" name="components" value={components} onChange={onAttributeChanged} />
                 </section>
-                <section className="card--materials">
-                    <textarea title="Materials" required placeholder="Materials" name="materials" value={materials} onChange={onAttributeChanged} />
-                </section>
-                <section className="card--source">
-                    <input title="Source name" required placeholder="Source name" type="text" name="sourceName" className="card--source-name" value={sourceName} onChange={onAttributeChanged} />
-                    <input title="Source page" required placeholder="Source page" type="text" name="sourcePage" className="card--source-page" value={sourcePage} onChange={onAttributeChanged} />
-                </section>
+                <hr />
+                <footer>
+                    <section className="card--source">
+                        <input title="Source" required placeholder="Source" type="text" name="source" className="card--source-name" value={source} onChange={onAttributeChanged} />
+                    </section>
+                    <section className="card--level">
+                        <label>
+                            <span>Level&nbsp;</span>
+                            <input title="Level" required placeholder="Level" type="text" name="level" value={level} onChange={onAttributeChanged} size="1" />
+                        </label>
+                    </section>
+                </footer>
             </div>
         </form>
     );

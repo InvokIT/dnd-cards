@@ -12,3 +12,10 @@
     display: block;
     margin: 5mm;
 }
+
+@media print {
+  .cardList li {
+    margin: 0;
+    margin-left:1mm;
+  }
+}

@@ -1,17 +1,19 @@
-import React, { Component } from 'react';
-import style from "./Toolbar.css";
+import React from 'react';
+import "./Toolbar.css";
 
-class Toolbar extends Component {
-  constructor(props) {
-    super(props);
-  }
+const Toolbar = ({
+  onImportChanged,
+  onExportClicked
+}) => (
+  <section className="toolbar">
+    <form>
+      <label>
+        <input onChange={onImportChanged} type="file" accept="application/json" style={{display:"none"}} />
+        <span>Import...</span>
+      </label>
+    </form>
+    <span onClick={onExportClicked}>Export...</span>
+  </section>
+);
 
-  render() {
-    return (
-      <section className={style.toolbar}>
-        <button>+</button>
-        <input type="file" multiple>Import...</input>
-      </section>
-    );
-  }
-}
+export default Toolbar;
