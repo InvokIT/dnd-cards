@@ -48,6 +48,8 @@ export default () => (
     </datalist>
     <datalist id="spell-ranges">
       <option value="Touch" />
+      <option value="100ft + 10ft/level" />
+      <option value="25 ft. + 5 ft./2 levels" />
     </datalist>
   </div>
 );
