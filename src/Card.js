@@ -45,7 +45,7 @@ const Card = ({
             <div className="card--school-color" />
             <header>
                 <section className="card--name">
-                    <input title="Name" required placeholder="Name" type="text" name="name" value={name} onChange={onAttributeChanged} onBlur={fitElement} />
+                    <input title="Name" autocomplete="off" required placeholder="Name" type="text" name="name" value={name} onChange={onAttributeChanged} onBlur={fitElement} />
                 </section>
                 <section className="card--save-icon">
                 </section>
