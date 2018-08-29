@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import PropTypes from "prop-types";
 import Toolbar from "./Toolbar";
 import { importFile, exportFile } from "./actions/storage";
 
@@ -24,9 +23,5 @@ const ToolbarContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Toolbar);
-
-ToolbarContainer.propTypes = {
-
-};
 
 export default ToolbarContainer;

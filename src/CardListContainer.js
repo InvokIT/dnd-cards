@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import PropTypes from "prop-types";
 import CardList from "./CardList";
 import { createSpell } from "./actions/spells";
 
@@ -21,9 +20,5 @@ const CardListContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(CardList);
-
-CardListContainer.propTypes = {
-
-};
 
 export default CardListContainer;
