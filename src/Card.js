@@ -7,6 +7,7 @@ import castTimeIcon from "./resources/gear.svg";
 import durationIcon from "./resources/hourglass.svg";
 import rangeIcon from "./resources/reticle.svg";
 import saveIcon from "./resources/shield.svg";
+import ShieldIcon from "./ShieldIcon";
 // import AutoScalingInput from "./AutoScalingInput";
 
 const preventDefault = (e) => e.preventDefault();
