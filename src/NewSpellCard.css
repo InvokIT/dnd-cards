@@ -1,8 +1,7 @@
 .new-spell-card {
   width: 55mm;
   height: 80mm;
-  border: 0.2mm rgba(0,0,0,0.5) dashed;
-  border-radius: 2mm;
+  border: 0.5mm rgba(0,0,0,0.5) dashed;
   position: relative;
   cursor: pointer;
   background-size: cover;
