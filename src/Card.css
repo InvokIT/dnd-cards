@@ -185,7 +185,7 @@
 }
 
 .card[school~="transmutation"] .card--school-color {
-    background-color: rgba(125, 40, 165, 0.5);
+    background-color: rgba(88, 17, 121, 0.623);
 }
 
 @media print {
