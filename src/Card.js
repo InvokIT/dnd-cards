@@ -49,6 +49,7 @@ const Card = ({
                     <input title="Name" autoComplete="off" required placeholder="Name" type="text" name="name" value={name} onChange={onAttributeChanged} onBlur={fitElement} />
                 </section>
                 <section className="card--save-icon">
+                    <ShieldIcon />
                 </section>
             </header>
             <div className="card--content">

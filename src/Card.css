@@ -52,7 +52,7 @@
 
 .card > header, .card .card--name input {
     font-family: "Lycanthrope", fantasy;
-    font-size:13pt;
+    font-size:14pt;
 }
 
 .card .card--save-icon {
@@ -61,26 +61,26 @@
     align-items: center;
 }
 
-.card[save] .card--save-icon::before {
-    display: block;
-    content: "";
-    width: 3mm;
-    height: 3mm;
-    border-radius: 50%;
-    border: solid #444 0.4mm;
+.card:not([save]) .card--save-icon .shield-icon, .card[save*="harmless"] .card--save-icon .shield-icon, .card[save*="object"] .card--save-icon .shield-icon {
+    display: none;
+}
+
+.card[save] .card--save-icon .shield-icon {
+    height: 5mm;
+    width: 5mm;
     margin-left: 1mm;
 }
 
-.card[save~="fortitude"] .card--save-icon::before {
-    background-color: red;
+.card[save*="fortitude"] .card--save-icon .shield-icon--fill {
+    fill: rgb(211, 46, 16);
 }
 
-.card[save~="reflex"] .card--save-icon::before {
-    background-color: rgb(44, 192, 44);
+.card[save*="reflex"] .card--save-icon .shield-icon--fill {
+    fill: rgb(44, 192, 44);
 }
 
-.card[save~="will"] .card--save-icon::before {
-    background-color: goldenrod;
+.card[save*="will"] .card--save-icon .shield-icon--fill {
+    fill: goldenrod;
 }
 
 .card--content {
