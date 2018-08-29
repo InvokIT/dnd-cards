@@ -71,15 +71,15 @@
     margin-left: 1mm;
 }
 
-.card[save~="fortitude" i] .card--save-icon::before {
+.card[save~="fortitude"] .card--save-icon::before {
     background-color: red;
 }
 
-.card[save~="reflex" i] .card--save-icon::before {
+.card[save~="reflex"] .card--save-icon::before {
     background-color: rgb(44, 192, 44);
 }
 
-.card[save~="will" i] .card--save-icon::before {
+.card[save~="will"] .card--save-icon::before {
     background-color: goldenrod;
 }
 
