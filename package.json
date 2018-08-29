@@ -2,6 +2,7 @@
   "name": "dnd-cards",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://invokit.github.io/dnd-cards",
   "dependencies": {
     "classnames": "^2.2.6",
     "lodash-es": "^4.17.10",
