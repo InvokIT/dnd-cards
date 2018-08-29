@@ -40,7 +40,7 @@ const Card = ({
     const backgroundImage = cardBackgroundImages[stringHash(id) % cardBackgroundImages.length];
 
     return (
-        <form school={school || null} save={save || null} className="card" onSubmit={preventDefault}>
+        <form school={(school && school.toLowerCase()) || null} save={save || null} className="card" onSubmit={preventDefault}>
             <img className="card--background" src={backgroundImage} alt="" />
             <div className="card--school-color" />
             <header>
