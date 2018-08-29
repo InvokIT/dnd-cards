@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import classNames from "classnames";
 import stringHash from "string-hash";
 import './Card.css';
 import { cardBackgroundImages } from "./resources";
