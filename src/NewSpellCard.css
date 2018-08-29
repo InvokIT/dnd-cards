@@ -1,6 +1,6 @@
 .new-spell-card {
-  width: 55mm;
-  height: 80mm;
+  width: 2.5in;
+  height: 3.5in;
   border: 0.5mm rgba(0,0,0,0.5) dashed;
   position: relative;
   cursor: pointer;

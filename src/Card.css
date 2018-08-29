@@ -1,8 +1,8 @@
 .card {
     display: flex;
     flex-direction: column;
-    width: 55mm;
-    height:80mm;
+    width: 2.5in;
+    height: 3.5in;
     position:relative;
     padding: 2mm;
     box-sizing: border-box;
