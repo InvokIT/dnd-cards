@@ -2,20 +2,20 @@
     width: 100%;
     margin:0;
     padding:0;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
     list-style-type: none;
 }
 
 .cardList li {
-    display: block;
-    margin: 5mm;
+  position: relative;
+  display: block;
+  float: left;
+  margin: 2mm;
+  page-break-inside: avoid;
+  page-break-before: auto;
 }
 
 @media print {
   .cardList li {
     margin: 0;
-    margin-left:1mm;
   }
 }

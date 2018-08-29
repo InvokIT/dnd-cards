@@ -8,7 +8,7 @@ import NewSpellCard from "./NewSpellCard";
 const CardList = ({spellIds, onCreateSpellClicked}) => {
   return (
     <ul className="cardList">
-      <li>
+      <li className="screen-only">
         <NewSpellCard onClick={onCreateSpellClicked} />
       </li>
       {spellIds.map(spellId => 

@@ -104,7 +104,6 @@
 }
 
 .card--content section {
-    min-height: 1em;
     display: flex;
     flex-grow: 0;
     flex-shrink: 0;
@@ -150,14 +149,6 @@
     .card :invalid {
         display:none;
     }
-
-    .card .print-only {
-        display: block;
-    }
-
-    .card .screen-only {
-        display: none;
-    }
 }
 
 .card .card--school input {
@@ -179,23 +170,29 @@
 }
 
 .card[school~="enchantment" i] .card--school-color {
-    background-color: rgba(202, 47, 169, 0.5);
+    background-color: rgba(189, 63, 121, 0.568);
 }
 
 .card[school~="evocation" i] .card--school-color {
-    background-color: rgba(192, 13, 13, 0.5);
+    background-color: rgba(243, 113, 26, 0.623);
 }
 
 .card[school~="illusion" i] .card--school-color {
-    background-color: rgba(233, 147, 18, 0.5);
+    background-color: rgba(240, 202, 32, 0.644);
 }
 
 .card[school~="necromancy" i] .card--school-color {
-    background-color: rgba(0, 58, 3, 0.5);
+    background-color: rgba(8, 56, 10, 0.685);
 }
 
 .card[school~="transmutation" i] .card--school-color {
-    background-color: rgba(142, 21, 158, 0.5);
+    background-color: rgba(125, 40, 165, 0.5);
+}
+
+@media print {
+    .card:not([save]) .card--save {
+        display: none;
+    }
 }
 
 .card .card--description {

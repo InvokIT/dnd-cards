@@ -1,3 +1,9 @@
 .toolbar {
-  
+  display: flex;
+}
+
+@media print {
+  .toolbar {
+    display: none;
+  }
 }
