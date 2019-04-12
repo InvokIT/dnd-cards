@@ -7,7 +7,6 @@
     padding: 2mm;
     box-sizing: border-box;
     font-family: "Alegreya", serif;
-    background-color: black;
 }
 
 .card--background {
@@ -26,7 +25,6 @@
     height: 100%;
     border: 0.5mm solid black;
     box-sizing: border-box;
-    border-radius: 2mm;
 }
 
 .card > header {
